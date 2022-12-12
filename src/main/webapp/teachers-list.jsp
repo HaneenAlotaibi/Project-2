@@ -15,8 +15,8 @@
 <table border ="1" width="500" align="center">
          <tr bgcolor="FFEE88">
           <th><b>id</b></th>
-          <th><b>fName</b></th>
-          <th><b>lname</b></th>
+          <th><b>first name</b></th>
+          <th><b>last name</b></th>
           <th><b>age</b></th>
          </tr>
         <%-- Fetching the attributes of the request object

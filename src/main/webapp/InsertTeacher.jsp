@@ -7,13 +7,16 @@
 <title>Insert Teacher</title>
 </head>
 <body>
-<form action="InsertTeacher">
+<form action="InsertStudent">
 <input type="text" placeholder="first name" name="fname">
 <br>
 <input type="text" placeholder=" last name " name="lname">
 <br>
 
 <input type="number" placeholder="Age" name="age">
+<br>
+
+<input type="number" placeholder="class number " name="class">
 <br>
 
 <input type="submit" value="submit">

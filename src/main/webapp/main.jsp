@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Main</title>
 </head>
 <body>
 <%-- 
@@ -19,7 +19,7 @@
  <table style="width:100%">
  <tr bgcolor="#c2c9ff">
   <tr>
-    <th>choose</th>
+    <th><b>Available choices<b></th>
   
   </tr>
    <tr>       
@@ -36,6 +36,17 @@
 </tr>
 <tr>
 <td><a href="Insertsubjects.jsp" > Insert subject</a></td>
+</tr>
+<tr>
+<td><a href="InsertClass.jsp" > Insert class</a></td>
+</tr>
+<tr>
+ <td><br></td>
+</tr>
+<tr>
+ <td><button onclick="window.location.href='index1.jsp';">
+     logout
+    </button></td>
 </tr>
 </tr>
 </table>
