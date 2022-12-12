@@ -3,13 +3,16 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.Haneen.project.Student"%>
 <%@page import="com.Haneen.project.GetStudentsServlet"%>
+<%@page import="com.Haneen.project.Teacher"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <style>
 table {
   border-collapse: collapse;
-  width: 100%;
+  float: left
+
 }
 
 th, td {
@@ -28,30 +31,59 @@ tr:nth-child(even) {
  <%-- <jsp:forward  page="GetStudentsServlet.java"></jsp:forward > --%> 
  
 
-<table border ="1" align="center">
-         <tr >
-          <th><b>id</b></th>
-          <th><b>first name</b></th>
-          <th><b>last name</b></th>
-          <th><b>age</b></th>
-         </tr>
+
         <%-- Fetching the attributes of the request object
              which was previously set by the servlet 
               "StudentServlet.java"
         --%> 
-        <%ArrayList<Student> studentslist = 
+  <div style="display:block; width:100%;">  
+  <div style="width:50%; float: left; display: inline-table;">     
+       <table border ="1">
+        <tr >
+          <th><b>id</b></th>
+      </tr>
+        <%ArrayList<Teacher> teacherslist = 
+            (ArrayList<Teacher>)request.getAttribute("teachersList");
+        for(Teacher t:teacherslist){%>
+        <tr>
+               
+                <td><%=t.fname%></td>
+                
+            </tr>
+      
+           
+            
+            <%}%>
+               </table>
+               
+               <table border ="1" >
+               </div>
+        <div style="width:50%; float: left; display: inline-table;">       
+        <tr >
+          <th><b>id</b></th>
+      </tr> 
+       <%ArrayList<Student> studentslist = 
             (ArrayList<Student>)request.getAttribute("studentsList");
         for(Student s:studentslist){%>
         <%-- Arranging data in tabular form
         --%>
-            <tr>
-                <td><%=s.id%></td>
+         </tr>
+      <tr>
+               
                 <td><%=s.fname%></td>
-                <td><%=s.lname%></td>
-                <td><%=s.age%></td>
+                
             </tr>
+       
+           
+            
             <%}%>
-        </table> 
+     
+     </tr>
+       
+         </table> 
+         </div>  
+
+</div>
 <br>
 <button onclick="window.location.href='main.jsp';">
      main page

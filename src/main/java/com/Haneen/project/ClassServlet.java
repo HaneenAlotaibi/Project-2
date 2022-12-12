@@ -21,8 +21,8 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
-@WebServlet("/SubjectServlet")
-public class SubjectServlet extends HttpServlet {
+@WebServlet("/ClassServlet")
+public class ClassServlet extends HttpServlet {
 	public static final String DB_URLTOCONNECT ="jdbc:mysql://localhost:3306/backendadmin";
 	public static final String DB_USERNAME ="root";
 	public static final String DB_PASS="";
@@ -37,31 +37,32 @@ public class SubjectServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		 response.setContentType("text/html;charset=UTF-8");
 	   PrintWriter out1 = response.getWriter();
-//	       response.setContentType("text/html");
-	   Subject(request,response,out);
-		 
+ response.setContentType("text/html");
+		 ClassInf(request,response,out);
+
 	}
-	static void Subject(HttpServletRequest request, HttpServletResponse response, PrintWriter out) throws ServletException, IOException {
-		List <Subject> subjects= new ArrayList();
+	static void ClassInf(HttpServletRequest request, HttpServletResponse response, PrintWriter out) throws ServletException, IOException {
+		List <ClassData> ClassDatas= new ArrayList();
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			dbCon = DriverManager.getConnection(DB_URLTOCONNECT, DB_USERNAME, DB_PASS);
 			System.out.println("connected successfully");
-			qry = "select * from subjects";
+			qry = "select * from class";
 			theStatement = dbCon.createStatement();
 			resultset = theStatement.executeQuery(qry);
 			 
 
 			 while(resultset.next()) {
-				 Subject subject = new Subject(resultset.getInt("id"),resultset.getString("name"));
-				 subjects.add(subject);
+				 ClassData classdata = new ClassData(resultset.getInt("id"),resultset.getString("teacher"),
+							resultset.getString("subject"),resultset.getString("time"));
+				 ClassDatas.add(classdata);
 			 }	
 			 out.println("hi");
 //			 for(Student student: students) {
 //				 out.println(student.civilId);
 //			 }
-			 request.setAttribute("subjectsList", subjects);
-			 RequestDispatcher dispatcher = request.getRequestDispatcher("/Subject-list.jsp");
+			 request.setAttribute("ClassDatassList", ClassDatas);
+			 RequestDispatcher dispatcher = request.getRequestDispatcher("/ClassDatasList.jsp");
 				dispatcher.forward(request, response);
 		} catch (ClassNotFoundException e) {
 			

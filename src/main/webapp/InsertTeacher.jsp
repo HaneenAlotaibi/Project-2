@@ -21,5 +21,9 @@
 
 <input type="submit" value="submit">
 </form>
+<br>
+<button onclick="window.location.href='main.jsp';">
+     main page
+    </button></td>
 </body>
 </html>
