@@ -148,7 +148,7 @@ public class Report extends HttpServlet {
 		try {
 			resultset = theStatement.executeQuery(qry2);
 		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
+			
 			e1.printStackTrace();
 		}
 		try {
