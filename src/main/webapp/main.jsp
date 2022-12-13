@@ -124,7 +124,9 @@ color:#FFF;
 <tr>
 <td><a href="test" > Insert class</a></td>
 </tr>
-
+<tr>
+<td><a href="Testcon" > view report</a></td>
+</tr>
 <tr>
  <td><br></td>
 </tr>
