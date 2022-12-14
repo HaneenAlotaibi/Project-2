@@ -38,8 +38,6 @@ public class InsertClass extends HttpServlet {
 		String teachers = request.getParameter("teacher");
 		String subjects = request.getParameter("subject");
 		String time = request.getParameter("time");
-		int teacher=Integer.parseInt(teachers); 
-		int subject=Integer.parseInt(subjects);  
 		
 	;  
 		
@@ -48,14 +46,14 @@ public class InsertClass extends HttpServlet {
 				Class.forName("com.mysql.cj.jdbc.Driver");
 				dbCon = DriverManager.getConnection(DB_URLTOCONNECT, DB_USERNAME, DB_PASS);
 				System.out.println("connected successfully");
-				qry = "INSERT INTO `classes`(`id`, `teacher`, `subject`, `time`) VALUES  (?,?,?,?)";
+				qry = "INSERT INTO `class`(`id`, `teacher`, `subject`, `time`) VALUES  (?,?,?,?)";
 //				theStatement = dbCon.createStatement();
 //				resultset = theStatement.executeQuery(qry);
 				preparedStatement = dbCon.prepareStatement(qry);
 				preparedStatement.setNull(1,0);
 
-				preparedStatement.setInt(2, teacher);
-				preparedStatement.setInt(3, subject);
+				preparedStatement.setString(2, teachers);
+				preparedStatement.setString(3, subjects);
 				preparedStatement.setString(4, time);
 
 				

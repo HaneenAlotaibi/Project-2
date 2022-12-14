@@ -7,7 +7,7 @@
 <title>Insert Teacher</title>
 </head>
 <body>
-<form action="InsertStudent">
+<form action="InsertTeacher">
 <input type="text" placeholder="first name" name="fname">
 <br>
 <input type="text" placeholder=" last name " name="lname">
@@ -16,11 +16,16 @@
 <input type="number" placeholder="Age" name="age">
 <br>
 
-<input type="number" placeholder="class number " name="class">
-<br>
 
-<input type="submit" value="submit">
-</form>
+<input type="submit" value="submit" onclick="myFunction()"">
+	</form>
+
+	<p id="demo"></p>
+	<script>
+		function myFunction() {
+			document.getElementById("demo").innerHTML = "teacher inserted";
+		}
+	</script>
 <br>
 <button onclick="window.location.href='main.jsp';">
      main page

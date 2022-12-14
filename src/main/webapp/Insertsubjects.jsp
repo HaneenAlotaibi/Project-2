@@ -5,14 +5,21 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert Teacher</title>
+<title>Insert subject</title>
 </head>
 <body>
 <form action="Insertsubjects">
 <input type="text" placeholder="subject name" name="name">
 <br>
-<input type="submit" value="submit">
-</form>
+<input type="submit" value="submit" onclick="myFunction()"">
+	</form>
+
+	<p id="demo"></p>
+	<script>
+		function myFunction() {
+			document.getElementById("demo").innerHTML = "student inserted";
+		}
+	</script>
 <br>
 <button onclick="window.location.href='main.jsp';">
      main page

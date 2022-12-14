@@ -3,6 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+        <title>Display Alert Message on Button Click Event.</title>
+        <script type="text/javascript">
+            function showMessage() {
+                alert("Hello friends, this is message.");
+            }
+        </script>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
@@ -19,10 +26,20 @@
 <input type="number" placeholder="class number " name="class">
 <br>
 
-<input type="submit" value="submit">
-</form>
+<input type="submit" value="submit" onclick="myFunction()">
+	</form>
+
+	<p id="demo"></p>
+	<script>
+		function myFunction() {
+			document.getElementById("demo").innerHTML = "student inserted";
+		}
+	</script>
 <br>
-<button onclick="window.location.href='main.jsp';">
+
+
+
+<button onclick="window.location.href='main.jsp';" onClick="showMessage()" >
      main page
     </button></td>
 </body>
